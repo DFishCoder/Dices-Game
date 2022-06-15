@@ -21,10 +21,10 @@
         <div class="colorSelections">
 
           <div class="colors">
-            <button id="color1L"></button>
-            <button id="color2L"></button>
-            <button id="color3L"></button>
-            <button id="color4L"></button>
+            <button id="color1L" onclick="color1Left()"></button>
+            <button id="color2L" onclick="color2Left()"></button>
+            <button id="color3L" onclick="color3Left()"></button>
+            <button id="color4L" onclick="color4Left()"></button>
           </div>
 
           <div class="numberOfDices">
@@ -40,10 +40,10 @@
           </div>
   
           <div class="colors">
-            <button id="color1R"></button>
-            <button id="color2R"></button>
-            <button id="color3R"></button>
-            <button id="color4R"></button>
+            <button id="color1R" onclick="color1Right()"></button>
+            <button id="color2R" onclick="color2Right()"></button>
+            <button id="color3R" onclick="color3Right()"></button>
+            <button id="color4R" onclick="color4Right()"></button>
           </div>
         </div>
       </div>
@@ -51,9 +51,9 @@
       <div class="tables">
         <div class="tableLeft">
           <h2>Player 1</h2>
-          <div class="lD" id="lDice1">6</div>
-          <div class="lD" id="lDice2">6</div>
-          <div class="lD" id="lDice3">6</div>
+          <div class="lD" id="lD1">6</div>
+          <div class="lD" id="lD2">6</div>
+          <div class="lD" id="lD3">6</div>
           <button class="leftButton">Throw !</button>
         </div>
 
@@ -61,14 +61,17 @@
 
         <div class="tableRight">
           <h2>Player 2</h2>
-          <div class="rD" id="rDice1">6</div>
-          <div class="rD" id="rDice2">6</div>
-          <div class="rD" id="rDice3">6</div>
+          <div class="rD" id="rD1">6</div>
+          <div class="rD" id="rD2">6</div>
+          <div class="rD" id="rD3">6</div>
           <button class="rightButton">Throw !</button>
         </div>
       </div>
         
       </div>
     </div>
+
+    <!-- Main JS -->
+    <script src="main.js"></script>
   </body>
 </html>

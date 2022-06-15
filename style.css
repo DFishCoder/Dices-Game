@@ -69,38 +69,24 @@ h1 {
   opacity: 0.3;
 }
 
-#color1L {
-  background-color: red;
-  opacity: 1;
-}
-
-#color2L {
-  background-color: yellow;
-}
-
-#color3L {
-  background-color: blue;
-}
-
-#color4L {
-  background-color: green;
-}
-
-#color1R {
+#color1L, #color1R {
   background-color: red;
 }
 
-#color2R {
+#color2L, #color2R {
   background-color: yellow;
-  opacity: 1;
 }
 
-#color3R {
+#color3L, #color3R {
   background-color: blue;
 }
 
-#color4R {
+#color4L, #color4R {
   background-color: green;
+}
+
+.lD, .rD {
+  transition: 0.3s;
 }
 
 #players {
@@ -154,8 +140,6 @@ h1 {
 }
 
 .lD {
-  margin-right: 7.3rem;
-  background-color: red;
   height: 3rem;
   width: 3rem;
   display: flex;
@@ -164,7 +148,6 @@ h1 {
 }
 
 .rD {
-  background-color: yellow;
   height: 3rem;
   width: 3rem;
   display: flex;
