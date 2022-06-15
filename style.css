@@ -1,0 +1,182 @@
+/***** RESET ********************************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/************** STYLES *****************/
+
+body {
+  background-color: rgba(2, 46, 68, 0.616);
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  margin-top: 1.5rem;
+  padding: 0.2rem;
+}
+
+h1 {
+  margin-bottom: 3rem;
+  text-align: center;
+  color: white;
+}
+
+#config {
+  padding: 2rem;
+  width: auto;
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  align-items: center;
+  text-align: center;
+}
+
+.numberOfDices {
+  text-align: center;
+  width: 6rem;
+}
+
+.numberOfDices button {
+  width: 2rem;
+  opacity: 0.2;
+}
+
+#N3 {
+  opacity: 1;
+}
+
+.container .colorSelections {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.container .colorSelections .colors button {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.3rem;
+  opacity: 0.3;
+}
+
+#color1L {
+  background-color: red;
+  opacity: 1;
+}
+
+#color2L {
+  background-color: yellow;
+}
+
+#color3L {
+  background-color: blue;
+}
+
+#color4L {
+  background-color: green;
+}
+
+#color1R {
+  background-color: red;
+}
+
+#color2R {
+  background-color: yellow;
+  opacity: 1;
+}
+
+#color3R {
+  background-color: blue;
+}
+
+#color4R {
+  background-color: green;
+}
+
+#players {
+  display: flex;
+  justify-content: center;
+}
+
+#players div {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
+.tables {
+  max-width: 25rem;
+  padding: 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tables h2  {
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+}
+
+#divider {
+  width: 0.2rem;
+  height: hv;
+  background-color: black;
+}
+
+.tableLeft div {
+  border: 1px solid rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.tableRight div {
+  border: 1px solid rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.lD {
+  margin-right: 7.3rem;
+  background-color: red;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rD {
+  background-color: yellow;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rightButton {
+  padding: 1rem 2rem;
+}
+
+.leftButton {
+  padding: 1rem 2rem;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 2rem;
+}
