@@ -158,11 +158,11 @@ h1 {
   color: white;
 }
 
-.rightButton {
+#leftButton {
   padding: 1rem 2rem;
 }
 
-.leftButton {
+#rightButton {
   padding: 1rem 2rem;
 }
 

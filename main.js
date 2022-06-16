@@ -130,10 +130,7 @@ function color4Right() {
   document.getElementById('rD3').style.color = 'white'
 }
 
-
-
 // ********  NUMBER OF DICES  ****** //
-
 
 function numberOfDicesL1() {
   document.getElementById('LN1').style.opacity = 1
@@ -195,7 +192,89 @@ function numberOfDicesR3() {
   document.getElementById('rD3').style.display = 'flex'
 }
 
+// ***** THE WINNER  **** //
+
+  // var winner
+
+  // function win() {
+  
+  //   if (resultlD1+resultlD2+resultlD3 > resultrD1+resultrD2+resultrD3) {winner = 1} 
+  //   if (resultlD1+resultlD2+resultlD3 < resultrD1+resultrD2+resultrD3) {winner = 2}
+  //   if (resultlD1+resultlD2+resultlD3 == resultrD1+resultrD2+resultrD3) {winner = 3}
+  // }
+
 
 // ******* THROW DICES  **** //
 
+const rightButton = document.querySelector('#rightButton')
+const leftButton = document.querySelector('#leftButton')
+var leftButtonDisable
+var rightButtonDisable
 
+function throwLefttDices() {
+  leftButton.setAttribute('disabled', true)
+  leftButtonDisable = 1
+
+  const resultlD1 = Math.floor(Math.random() * 6) + 1
+  lD1.innerHTML = resultlD1
+
+  const resultlD2 = Math.floor(Math.random() * 6) + 1
+  lD2.innerHTML = resultlD2
+
+  const resultlD3 = Math.floor(Math.random() * 6) + 1
+  lD3.innerHTML = resultlD3
+
+  if (leftButtonDisable + rightButtonDisable == 2) {
+
+    setTimeout(function () {
+      alert('Player X won !')
+    }, 1000)
+
+    setTimeout(function () {
+      lD1.innerHTML = ''
+      lD2.innerHTML = ''
+      lD3.innerHTML = ''
+      rD1.innerHTML = ''
+      rD2.innerHTML = ''
+      rD3.innerHTML = ''
+      leftButton.removeAttribute('disabled')
+      rightButton.removeAttribute('disabled')
+      leftButtonDisable = 0
+      rightButtonDisable = 0
+    }, 2000)
+  }
+}
+
+function throwRightDices() {
+  rightButton.setAttribute('disabled', true)
+  rightButtonDisable = 1
+
+  const resultrD1 = Math.floor(Math.random() * 6) + 1
+  rD1.innerHTML = resultrD1
+
+  const resultrD2 = Math.floor(Math.random() * 6) + 1
+  rD2.innerHTML = resultrD2
+
+  const resultrD3 = Math.floor(Math.random() * 6) + 1
+  rD3.innerHTML = resultrD3
+
+  if (leftButtonDisable + rightButtonDisable == 2) {
+
+    setTimeout(function () { 
+      alert('Player X won !')
+    }, 1000)
+
+    setTimeout(function () {
+      lD1.innerHTML = ''
+      lD2.innerHTML = ''
+      lD3.innerHTML = ''
+      rD1.innerHTML = ''
+      rD2.innerHTML = ''
+      rD3.innerHTML = ''
+      leftButton.removeAttribute('disabled')
+      rightButton.removeAttribute('disabled')
+      leftButtonDisable = 0
+      rightButtonDisable = 0
+    }, 2000)
+  }
+}
