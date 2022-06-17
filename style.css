@@ -48,14 +48,6 @@ h1 {
   opacity: 0.2;
 }
 
-#LN3 {
-  opacity: 1;
-}
-
-#RN3 {
-  opacity: 1;
-}
-
 .container .colorSelections {
   display: flex;
   justify-content: center;
@@ -156,6 +148,10 @@ h1 {
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+#lD1, #lD2, #lD3, #rD1, #rD2, #rD3 {
+  display: none;
 }
 
 #leftButton {

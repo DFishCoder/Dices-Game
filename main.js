@@ -132,6 +132,9 @@ function color4Right() {
 
 // ********  NUMBER OF DICES  ****** //
 
+var LD1, LD2, LD3, RD1, RD2, RD3 = 0
+
+
 function numberOfDicesL1() {
   document.getElementById('LN1').style.opacity = 1
   document.getElementById('LN2').style.opacity = 0.2
@@ -140,6 +143,10 @@ function numberOfDicesL1() {
   document.getElementById('lD1').style.display = 'flex'
   document.getElementById('lD2').style.display = 'none'
   document.getElementById('lD3').style.display = 'none'
+
+  LD1 = 1
+  LD2 = 0
+  LD3 = 0
 }
 
 function numberOfDicesL2() {
@@ -150,6 +157,10 @@ function numberOfDicesL2() {
   document.getElementById('lD1').style.display = 'flex'
   document.getElementById('lD2').style.display = 'flex'
   document.getElementById('lD3').style.display = 'none'
+
+  LD1 = 1
+  LD2 = 1
+  LD3 = 0
 }
 
 function numberOfDicesL3() {
@@ -160,6 +171,10 @@ function numberOfDicesL3() {
   document.getElementById('lD1').style.display = 'flex'
   document.getElementById('lD2').style.display = 'flex'
   document.getElementById('lD3').style.display = 'flex'
+
+  LD1 = 1
+  LD2 = 1
+  LD3 = 1
 }
 
 function numberOfDicesR1() {
@@ -170,6 +185,10 @@ function numberOfDicesR1() {
   document.getElementById('rD1').style.display = 'flex'
   document.getElementById('rD2').style.display = 'none'
   document.getElementById('rD3').style.display = 'none'
+
+  RD1 = 1
+  RD2 = 0
+  RD3 = 0
 }
 
 function numberOfDicesR2() {
@@ -180,6 +199,10 @@ function numberOfDicesR2() {
   document.getElementById('rD1').style.display = 'flex'
   document.getElementById('rD2').style.display = 'flex'
   document.getElementById('rD3').style.display = 'none'
+
+  RD1 = 1
+  RD2 = 1
+  RD3 = 0
 }
 
 function numberOfDicesR3() {
@@ -190,44 +213,55 @@ function numberOfDicesR3() {
   document.getElementById('rD1').style.display = 'flex'
   document.getElementById('rD2').style.display = 'flex'
   document.getElementById('rD3').style.display = 'flex'
+
+  RD1 = 1
+  RD2 = 1
+  RD3 = 1
 }
 
-// ***** THE WINNER  **** //
-
-  // var winner
-
-  // function win() {
-  
-  //   if (resultlD1+resultlD2+resultlD3 > resultrD1+resultrD2+resultrD3) {winner = 1} 
-  //   if (resultlD1+resultlD2+resultlD3 < resultrD1+resultrD2+resultrD3) {winner = 2}
-  //   if (resultlD1+resultlD2+resultlD3 == resultrD1+resultrD2+resultrD3) {winner = 3}
-  // }
-
-
-// ******* THROW DICES  **** //
+// *** DECLARATIONS  ***///
 
 const rightButton = document.querySelector('#rightButton')
 const leftButton = document.querySelector('#leftButton')
 var leftButtonDisable
 var rightButtonDisable
+var resultlD1, resultlD2, resultlD3, resultrD1, resultrD2, resultrD3
+var winner
+
+// ***** THE WINNER  **** //
+
+function win() {
+  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 > resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+    winner = 'Play 1 won !'
+  }
+  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 < resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+    winner = 'Play 2 won !'
+  }
+  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 == resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+    winner = 'Thas is a drow !'
+  }
+}
+
+// ******* THROW DICES  **** //
 
 function throwLefttDices() {
+
   leftButton.setAttribute('disabled', true)
   leftButtonDisable = 1
 
-  const resultlD1 = Math.floor(Math.random() * 6) + 1
+  resultlD1 = Math.floor(Math.random() * 6) + 1
   lD1.innerHTML = resultlD1
 
-  const resultlD2 = Math.floor(Math.random() * 6) + 1
+  resultlD2 = Math.floor(Math.random() * 6) + 1
   lD2.innerHTML = resultlD2
 
-  const resultlD3 = Math.floor(Math.random() * 6) + 1
+  resultlD3 = Math.floor(Math.random() * 6) + 1
   lD3.innerHTML = resultlD3
 
   if (leftButtonDisable + rightButtonDisable == 2) {
-
+    win()
     setTimeout(function () {
-      alert('Player X won !')
+      alert(winner)
     }, 1000)
 
     setTimeout(function () {
@@ -249,19 +283,19 @@ function throwRightDices() {
   rightButton.setAttribute('disabled', true)
   rightButtonDisable = 1
 
-  const resultrD1 = Math.floor(Math.random() * 6) + 1
+  resultrD1 = Math.floor(Math.random() * 6) + 1
   rD1.innerHTML = resultrD1
 
-  const resultrD2 = Math.floor(Math.random() * 6) + 1
+  resultrD2 = Math.floor(Math.random() * 6) + 1
   rD2.innerHTML = resultrD2
 
-  const resultrD3 = Math.floor(Math.random() * 6) + 1
+  resultrD3 = Math.floor(Math.random() * 6) + 1
   rD3.innerHTML = resultrD3
 
   if (leftButtonDisable + rightButtonDisable == 2) {
-
-    setTimeout(function () { 
-      alert('Player X won !')
+    win()
+    setTimeout(function () {
+      alert(winner)
     }, 1000)
 
     setTimeout(function () {
