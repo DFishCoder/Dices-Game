@@ -4,12 +4,15 @@ const color1L = document.querySelector('#color1L')
 const color2L = document.querySelector('#color2L')
 const color3L = document.querySelector('#color3L')
 const color4L = document.querySelector('#color4L')
+var leftColorChosen = false
 
 function color1Left() {
   color1L.style.opacity = 1
   color2L.style.opacity = 0.2
   color3L.style.opacity = 0.2
   color4L.style.opacity = 0.2
+
+  leftColorChosen = true
 
   document.getElementById('lD1').style.backgroundColor = 'red'
   document.getElementById('lD2').style.backgroundColor = 'red'
@@ -26,6 +29,8 @@ function color2Left() {
   color3L.style.opacity = 0.2
   color4L.style.opacity = 0.2
 
+  leftColorChosen = true
+
   document.getElementById('lD1').style.backgroundColor = 'yellow'
   document.getElementById('lD2').style.backgroundColor = 'yellow'
   document.getElementById('lD3').style.backgroundColor = 'yellow'
@@ -40,6 +45,8 @@ function color3Left() {
   color2L.style.opacity = 0.2
   color3L.style.opacity = 1
   color4L.style.opacity = 0.2
+
+  leftColorChosen = true
 
   document.getElementById('lD1').style.backgroundColor = 'blue'
   document.getElementById('lD2').style.backgroundColor = 'blue'
@@ -56,6 +63,8 @@ function color4Left() {
   color3L.style.opacity = 0.2
   color4L.style.opacity = 1
 
+  leftColorChosen = true
+
   document.getElementById('lD1').style.backgroundColor = 'green'
   document.getElementById('lD2').style.backgroundColor = 'green'
   document.getElementById('lD3').style.backgroundColor = 'green'
@@ -70,11 +79,15 @@ const color2R = document.querySelector('#color2R')
 const color3R = document.querySelector('#color3R')
 const color4R = document.querySelector('#color4R')
 
+var rightColorChosen = false
+
 function color1Right() {
   color1R.style.opacity = 1
   color2R.style.opacity = 0.2
   color3R.style.opacity = 0.2
   color4R.style.opacity = 0.2
+
+  rightColorChosen = true
 
   document.getElementById('rD1').style.backgroundColor = 'red'
   document.getElementById('rD2').style.backgroundColor = 'red'
@@ -91,6 +104,8 @@ function color2Right() {
   color3R.style.opacity = 0.2
   color4R.style.opacity = 0.2
 
+  rightColorChosen = true
+
   document.getElementById('rD1').style.backgroundColor = 'yellow'
   document.getElementById('rD2').style.backgroundColor = 'yellow'
   document.getElementById('rD3').style.backgroundColor = 'yellow'
@@ -105,6 +120,8 @@ function color3Right() {
   color2R.style.opacity = 0.2
   color3R.style.opacity = 1
   color4R.style.opacity = 0.2
+
+  rightColorChosen = true
 
   document.getElementById('rD1').style.backgroundColor = 'blue'
   document.getElementById('rD2').style.backgroundColor = 'blue'
@@ -121,6 +138,8 @@ function color4Right() {
   color3R.style.opacity = 0.2
   color4R.style.opacity = 1
 
+  rightColorChosen = true
+
   document.getElementById('rD1').style.backgroundColor = 'green'
   document.getElementById('rD2').style.backgroundColor = 'green'
   document.getElementById('rD3').style.backgroundColor = 'green'
@@ -132,8 +151,12 @@ function color4Right() {
 
 // ********  NUMBER OF DICES  ****** //
 
-var LD1, LD2, LD3, RD1, RD2, RD3 = 0
-
+var LD1 = 0,
+  LD2 = 0,
+  LD3 = 0,
+  RD1 = 0,
+  RD2 = 0,
+  RD3 = 0
 
 function numberOfDicesL1() {
   document.getElementById('LN1').style.opacity = 1
@@ -231,13 +254,22 @@ var winner
 // ***** THE WINNER  **** //
 
 function win() {
-  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 > resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+  if (
+    resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 >
+    resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
+  ) {
     winner = 'Play 1 won !'
   }
-  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 < resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+  if (
+    resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 <
+    resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
+  ) {
     winner = 'Play 2 won !'
   }
-  if (resultlD1*LD1 + resultlD2*LD2 + resultlD3*LD3 == resultrD1*RD1 + resultrD2*RD2 + resultrD3*RD3) {
+  if (
+    resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 ==
+    resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
+  ) {
     winner = 'Thas is a drow !'
   }
 }
@@ -245,70 +277,85 @@ function win() {
 // ******* THROW DICES  **** //
 
 function throwLefttDices() {
+  if (LD1 + LD2 + LD3 == 0) {
+    alert('Please, chose the number of dices you need')
+  } else {
+    if (leftColorChosen == false) {
+      alert('Please, chose the color you want')
+    } else {
+      leftButton.setAttribute('disabled', true)
+      leftButtonDisable = 1
 
-  leftButton.setAttribute('disabled', true)
-  leftButtonDisable = 1
+      resultlD1 = Math.floor(Math.random() * 6) + 1
+      lD1.innerHTML = resultlD1
 
-  resultlD1 = Math.floor(Math.random() * 6) + 1
-  lD1.innerHTML = resultlD1
+      resultlD2 = Math.floor(Math.random() * 6) + 1
+      lD2.innerHTML = resultlD2
 
-  resultlD2 = Math.floor(Math.random() * 6) + 1
-  lD2.innerHTML = resultlD2
+      resultlD3 = Math.floor(Math.random() * 6) + 1
+      lD3.innerHTML = resultlD3
 
-  resultlD3 = Math.floor(Math.random() * 6) + 1
-  lD3.innerHTML = resultlD3
+      if (leftButtonDisable + rightButtonDisable == 2) {
+        win()
+        setTimeout(function () {
+          alert(winner)
+        }, 1000)
 
-  if (leftButtonDisable + rightButtonDisable == 2) {
-    win()
-    setTimeout(function () {
-      alert(winner)
-    }, 1000)
-
-    setTimeout(function () {
-      lD1.innerHTML = ''
-      lD2.innerHTML = ''
-      lD3.innerHTML = ''
-      rD1.innerHTML = ''
-      rD2.innerHTML = ''
-      rD3.innerHTML = ''
-      leftButton.removeAttribute('disabled')
-      rightButton.removeAttribute('disabled')
-      leftButtonDisable = 0
-      rightButtonDisable = 0
-    }, 2000)
+        setTimeout(function () {
+          lD1.innerHTML = ''
+          lD2.innerHTML = ''
+          lD3.innerHTML = ''
+          rD1.innerHTML = ''
+          rD2.innerHTML = ''
+          rD3.innerHTML = ''
+          leftButton.removeAttribute('disabled')
+          rightButton.removeAttribute('disabled')
+          leftButtonDisable = 0
+          rightButtonDisable = 0
+        }, 2000)
+      }
+    }
   }
 }
 
 function throwRightDices() {
-  rightButton.setAttribute('disabled', true)
-  rightButtonDisable = 1
+  if (RD1 + RD2 + RD3 == 0) {
+    alert('Please, chose the number of dices you need')
+  } else {
+    if (rightColorChosen == false) {
+      alert('Please, chose the color you want')
+    } else {
+      rightButton.setAttribute('disabled', true)
+      rightButtonDisable = 1
 
-  resultrD1 = Math.floor(Math.random() * 6) + 1
-  rD1.innerHTML = resultrD1
+      resultrD1 = Math.floor(Math.random() * 6) + 1
+      rD1.innerHTML = resultrD1
 
-  resultrD2 = Math.floor(Math.random() * 6) + 1
-  rD2.innerHTML = resultrD2
+      resultrD2 = Math.floor(Math.random() * 6) + 1
+      rD2.innerHTML = resultrD2
 
-  resultrD3 = Math.floor(Math.random() * 6) + 1
-  rD3.innerHTML = resultrD3
+      resultrD3 = Math.floor(Math.random() * 6) + 1
+      rD3.innerHTML = resultrD3
 
-  if (leftButtonDisable + rightButtonDisable == 2) {
-    win()
-    setTimeout(function () {
-      alert(winner)
-    }, 1000)
+      if (leftButtonDisable + rightButtonDisable == 2) {
+        win()
+        setTimeout(function () {
+          alert(winner)
+        }, 1000)
 
-    setTimeout(function () {
-      lD1.innerHTML = ''
-      lD2.innerHTML = ''
-      lD3.innerHTML = ''
-      rD1.innerHTML = ''
-      rD2.innerHTML = ''
-      rD3.innerHTML = ''
-      leftButton.removeAttribute('disabled')
-      rightButton.removeAttribute('disabled')
-      leftButtonDisable = 0
-      rightButtonDisable = 0
-    }, 2000)
+        setTimeout(function () {
+          lD1.innerHTML = ''
+          lD2.innerHTML = ''
+          lD3.innerHTML = ''
+          rD1.innerHTML = ''
+          rD2.innerHTML = ''
+          rD3.innerHTML = ''
+          leftButton.removeAttribute('disabled')
+          rightButton.removeAttribute('disabled')
+          leftButtonDisable = 0
+          rightButtonDisable = 0
+        }, 2000)
+      }
+    }
   }
 }
