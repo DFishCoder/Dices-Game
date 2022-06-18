@@ -258,13 +258,13 @@ function win() {
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 >
     resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
   ) {
-    winner = 'Play 1 won !'
+    winner = 'Player 1 won !'
   }
   if (
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 <
     resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
   ) {
-    winner = 'Play 2 won !'
+    winner = 'Player 2 won !'
   }
   if (
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 ==
