@@ -284,7 +284,9 @@ function throwLefttDices() {
       alert('Please, chose the color you want')
     } else {
       leftButton.setAttribute('disabled', true)
-      leftButtonDisable = 1
+      leftButtonDisable = true
+
+      // resultlD1 = Math.floor(Math.random() * 6) + 1
 
       resultlD1 = Math.floor(Math.random() * 6) + 1
       lD1.innerHTML = resultlD1
@@ -295,23 +297,23 @@ function throwLefttDices() {
       resultlD3 = Math.floor(Math.random() * 6) + 1
       lD3.innerHTML = resultlD3
 
-      if (leftButtonDisable + rightButtonDisable == 2) {
+      if (leftButtonDisable && rightButtonDisable) {
         win()
         setTimeout(function () {
           alert(winner)
         }, 1000)
 
         setTimeout(function () {
-          lD1.innerHTML = ''
-          lD2.innerHTML = ''
-          lD3.innerHTML = ''
-          rD1.innerHTML = ''
-          rD2.innerHTML = ''
-          rD3.innerHTML = ''
+          lD1.innerHTML = '#'
+          lD2.innerHTML = '#'
+          lD3.innerHTML = '#'
+          rD1.innerHTML = '#'
+          rD2.innerHTML = '#'
+          rD3.innerHTML = '#'
           leftButton.removeAttribute('disabled')
           rightButton.removeAttribute('disabled')
-          leftButtonDisable = 0
-          rightButtonDisable = 0
+          leftButtonDisable = false
+          rightButtonDisable = false
         }, 2000)
       }
     }
@@ -324,9 +326,10 @@ function throwRightDices() {
   } else {
     if (rightColorChosen == false) {
       alert('Please, chose the color you want')
+      diceEfect()
     } else {
       rightButton.setAttribute('disabled', true)
-      rightButtonDisable = 1
+      rightButtonDisable = true
 
       resultrD1 = Math.floor(Math.random() * 6) + 1
       rD1.innerHTML = resultrD1
@@ -337,23 +340,23 @@ function throwRightDices() {
       resultrD3 = Math.floor(Math.random() * 6) + 1
       rD3.innerHTML = resultrD3
 
-      if (leftButtonDisable + rightButtonDisable == 2) {
+      if (leftButtonDisable && rightButtonDisable) {
         win()
         setTimeout(function () {
           alert(winner)
         }, 1000)
 
         setTimeout(function () {
-          lD1.innerHTML = ''
-          lD2.innerHTML = ''
-          lD3.innerHTML = ''
-          rD1.innerHTML = ''
-          rD2.innerHTML = ''
-          rD3.innerHTML = ''
+          lD1.innerHTML = '#'
+          lD2.innerHTML = '#'
+          lD3.innerHTML = '#'
+          rD1.innerHTML = '#'
+          rD2.innerHTML = '#'
+          rD3.innerHTML = '#'
           leftButton.removeAttribute('disabled')
           rightButton.removeAttribute('disabled')
-          leftButtonDisable = 0
-          rightButtonDisable = 0
+          leftButtonDisable = false
+          rightButtonDisable = false
         }, 2000)
       }
     }
