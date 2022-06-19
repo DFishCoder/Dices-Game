@@ -1,10 +1,37 @@
-// *****  CHANGE COLORS  ****** //
+
+/************************* VARIABLES *****************************/
 
 const color1L = document.querySelector('#color1L')
 const color2L = document.querySelector('#color2L')
 const color3L = document.querySelector('#color3L')
 const color4L = document.querySelector('#color4L')
+
+const color1R = document.querySelector('#color1R')
+const color2R = document.querySelector('#color2R')
+const color3R = document.querySelector('#color3R')
+const color4R = document.querySelector('#color4R')
+
 var leftColorChosen = false
+var rightColorChosen = false
+
+var LD1 = 0, LD2 = 0, LD3 = 0, RD1 = 0, RD2 = 0, RD3 = 0
+
+const rightButton = document.querySelector('#rightButton')
+const leftButton = document.querySelector('#leftButton')
+
+var winner
+
+var A=1, B=1, C=1, D=1, EfectLeftFinish, EfectRightFinish
+
+var resultlD1, resultlD2, resultlD3, resultrD1, resultrD2, resultrD3
+
+var speed = 250
+
+
+
+/*************************  FUNCTIONS ***************************/
+
+// *****  CHANGE COLORS  ****** //
 
 function color1Left() {
   color1L.style.opacity = 1
@@ -74,12 +101,6 @@ function color4Left() {
   document.getElementById('lD3').style.color = 'white'
 }
 
-const color1R = document.querySelector('#color1R')
-const color2R = document.querySelector('#color2R')
-const color3R = document.querySelector('#color3R')
-const color4R = document.querySelector('#color4R')
-
-var rightColorChosen = false
 
 function color1Right() {
   color1R.style.opacity = 1
@@ -151,12 +172,6 @@ function color4Right() {
 
 // ********  NUMBER OF DICES  ****** //
 
-var LD1 = 0,
-  LD2 = 0,
-  LD3 = 0,
-  RD1 = 0,
-  RD2 = 0,
-  RD3 = 0
 
 function numberOfDicesL1() {
   document.getElementById('LN1').style.opacity = 1
@@ -242,16 +257,35 @@ function numberOfDicesR3() {
   RD3 = 1
 }
 
-// *** DECLARATIONS  ***///
+// ******* THROW DICES  **** //
 
-const rightButton = document.querySelector('#rightButton')
-const leftButton = document.querySelector('#leftButton')
-var leftButtonDisable
-var rightButtonDisable
-var resultlD1, resultlD2, resultlD3, resultrD1, resultrD2, resultrD3
-var winner
+function throwLefttDices() {
+  if (LD1 + LD2 + LD3 == 0) {
+    alert('Please, chose the number of dices you need')
+  } else {
+    if (leftColorChosen == false) {
+      alert('Please, chose the color you want')
+    } else {
+      leftButton.setAttribute('disabled', true)
+      diceEfectLeft()
+    }
+  }
+}
 
-// ***** THE WINNER  **** //
+function throwRightDices() {
+  if (RD1 + RD2 + RD3 == 0) {
+    alert('Please, chose the number of dices you need')
+  } else {
+    if (rightColorChosen == false) {
+      alert('Please, chose the color you want')
+    } else {
+      rightButton.setAttribute('disabled', true)
+      diceEfectRight()
+    }
+  }
+}
+
+// ***** WIN  **** //
 
 function win() {
   if (
@@ -274,91 +308,155 @@ function win() {
   }
 }
 
-// ******* THROW DICES  **** //
+// **** DICE EFECT **** //
 
-function throwLefttDices() {
-  if (LD1 + LD2 + LD3 == 0) {
-    alert('Please, chose the number of dices you need')
-  } else {
-    if (leftColorChosen == false) {
-      alert('Please, chose the color you want')
-    } else {
-      leftButton.setAttribute('disabled', true)
-      leftButtonDisable = true
-
-      // resultlD1 = Math.floor(Math.random() * 6) + 1
-
-      resultlD1 = Math.floor(Math.random() * 6) + 1
-      lD1.innerHTML = resultlD1
-
-      resultlD2 = Math.floor(Math.random() * 6) + 1
-      lD2.innerHTML = resultlD2
-
-      resultlD3 = Math.floor(Math.random() * 6) + 1
-      lD3.innerHTML = resultlD3
-
-      if (leftButtonDisable && rightButtonDisable) {
-        win()
-        setTimeout(function () {
-          alert(winner)
-        }, 1000)
-
-        setTimeout(function () {
-          lD1.innerHTML = '#'
-          lD2.innerHTML = '#'
-          lD3.innerHTML = '#'
-          rD1.innerHTML = '#'
-          rD2.innerHTML = '#'
-          rD3.innerHTML = '#'
-          leftButton.removeAttribute('disabled')
-          rightButton.removeAttribute('disabled')
-          leftButtonDisable = false
-          rightButtonDisable = false
-        }, 2000)
-      }
+function diceEfectLeft() {
+  if (B == 1 && A < 7) {
+    if (A < 7) {
+      lD1.innerHTML = A
+      resultlD1 = A
     }
+    A = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectLeft()
+    }, speed)
+  }
+
+  if (B == 1 && A == 7) {
+    B = 2
+    A = 1
+
+    setTimeout(function () {
+      diceEfectLeft()
+    }, speed)
+  }
+
+  if (B == 2 && A < 7) {
+    if (A < 7) {
+      lD2.innerHTML = A
+      resultlD2 = A
+    }
+    A = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectLeft()
+    }, speed)
+  }
+
+  if (B == 2 && A == 7) {
+    B = 3
+    A = 1
+
+    setTimeout(function () {
+      diceEfectLeft()
+    }, speed)
+  }
+
+  if (B == 3 && A < 7) {
+    if (A < 7) {
+      lD3.innerHTML = A
+      resultlD3 = A
+    }
+    A = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectLeft()
+    }, speed)
+  }
+
+  if (B == 3 && A == 7) {
+    finishTurn()
+    EfectLeftFinish = true
   }
 }
 
-function throwRightDices() {
-  if (RD1 + RD2 + RD3 == 0) {
-    alert('Please, chose the number of dices you need')
-  } else {
-    if (rightColorChosen == false) {
-      alert('Please, chose the color you want')
-      diceEfect()
-    } else {
-      rightButton.setAttribute('disabled', true)
-      rightButtonDisable = true
-
-      resultrD1 = Math.floor(Math.random() * 6) + 1
-      rD1.innerHTML = resultrD1
-
-      resultrD2 = Math.floor(Math.random() * 6) + 1
-      rD2.innerHTML = resultrD2
-
-      resultrD3 = Math.floor(Math.random() * 6) + 1
-      rD3.innerHTML = resultrD3
-
-      if (leftButtonDisable && rightButtonDisable) {
-        win()
-        setTimeout(function () {
-          alert(winner)
-        }, 1000)
-
-        setTimeout(function () {
-          lD1.innerHTML = '#'
-          lD2.innerHTML = '#'
-          lD3.innerHTML = '#'
-          rD1.innerHTML = '#'
-          rD2.innerHTML = '#'
-          rD3.innerHTML = '#'
-          leftButton.removeAttribute('disabled')
-          rightButton.removeAttribute('disabled')
-          leftButtonDisable = false
-          rightButtonDisable = false
-        }, 2000)
-      }
+function diceEfectRight() {
+  if (D == 1 && C < 7) {
+    if (C < 7) {
+      rD1.innerHTML = C
+      resultrD1 = C
     }
+    C = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectRight()
+    }, speed)
   }
+
+  if (D == 1 && C == 7) {
+    D = 2
+    C = 1
+
+    setTimeout(function () {
+      diceEfectRight()
+    }, speed)
+  }
+
+  if (D == 2 && C < 7) {
+    if (C < 7) {
+      rD2.innerHTML = C
+      resultrD2 = C
+    }
+    C = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectRight()
+    }, speed)
+  }
+
+  if (D == 2 && C == 7) {
+    D = 3
+    C = 1
+
+    setTimeout(function () {
+      diceEfectRight()
+    }, speed)
+  }
+
+  if (D == 3 && C < 7) {
+    if (C < 7) {
+      rD3.innerHTML = C
+      resultrD3 = C
+    }
+    C = Math.floor(Math.random() * 7) + 1
+
+    setTimeout(function () {
+      diceEfectRight()
+    }, speed)
+  }
+
+  if (D == 3 && C == 7) {
+    finishTurn()
+    EfectRightFinish = true
+  }
+}
+
+/***** FINISH TURN *******/
+
+function finishTurn() {
+  setTimeout(function () {
+    if (EfectLeftFinish == 1 && EfectRightFinish == 1) {
+      win()
+
+      lD1.innerHTML = '#'
+      lD2.innerHTML = '#'
+      lD3.innerHTML = '#'
+      rD1.innerHTML = '#'
+      rD2.innerHTML = '#'
+      rD3.innerHTML = '#'
+
+      leftButton.removeAttribute('disabled')
+      rightButton.removeAttribute('disabled')
+      EfectLeftFinish = false
+      EfectRightFinish = false
+
+      A = 1
+      B = 1
+      C = 1
+      D = 1
+
+      alert(winner)
+    }
+  }, speed*5)
 }
