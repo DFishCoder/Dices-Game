@@ -7,7 +7,18 @@
 }
 
 
-/************** STYLES *****************/
+/************** Images *****************/
+
+#dice1, #dice2, #dice3, #dice4, #dice5, #dice6 {
+  height: 3rem;
+}
+
+#logo {
+  height: 5rem;
+}
+
+/************** Styles *****************/
+
 
 body {
   background-color: rgba(2, 46, 68, 0.616);
@@ -20,10 +31,22 @@ body {
   padding: 0.2rem;
 }
 
-h1 {
-  margin-bottom: 3rem;
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 0 20px;
+}
+
+#diceLogo {
+  height: 5rem;
+}
+
+#dice {
   text-align: center;
-  color: white;
+  margin-right: 0.3rem;
 }
 
 #config {
@@ -91,10 +114,9 @@ h1 {
 
 .tables {
   max-width: 25rem;
-  padding: 2rem 0;
+  padding: 0.7rem 0;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -105,12 +127,6 @@ h1 {
   margin-right: auto;
   text-align: center;
   color: white;
-}
-
-#divider {
-  width: 0.2rem;
-  height: hv;
-  background-color: black;
 }
 
 .tableLeft div {
@@ -125,6 +141,12 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+}
+
+#divider {
+  width: 0.2rem;
+  height: hv;
+  background-color: black;
 }
 
 .lD, .rD {
