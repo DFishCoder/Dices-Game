@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* word-break: break-word */
 }
 
 
@@ -30,16 +31,18 @@ body {
   background-color: rgba(2, 46, 68, 0.616);
   height: 100vh;
   padding: 1rem;
-  max-width: 30rem;
+  max-width: 20rem;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
 }
 
+
+/* ============== MENU CONFIG ================= */
+
 .menu{
   display: flex;
   justify-content: right;
-  width: 28rem;
   font-size: 1.5rem;
 }
 
@@ -55,12 +58,15 @@ body {
   margin-right: auto;
   align-items: center;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2rem;
   position: absolute;
   z-index: 2;
-  margin-left: 0.5rem;
   border-radius: 0.5rem;
-  height: 32rem;
+  height: 31rem;
+  width: 18rem;
+  
+  display: grid;
+  gap: 1rem;
 
   top: -25rem;
   visibility: hidden;
@@ -78,32 +84,15 @@ body {
 input {
   text-align: center;
   height: 2rem;
-}
-
-.configTables {
-  padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.leftSelections {
-  margin-right: 2rem;
-  display: grid;
-  gap: 1rem;
-}
-
-.rightSelections {
-  margin-left: 2rem;
-  display: grid;
-  gap: 1rem;
+  margin-bottom: .5rem;
 }
 
 .numberOfDices {
   text-align: center;
+}
+
+.speedLeft, .speedRight {
+  margin-top: 0.5rem;
 }
 
 .numberOfDices div {
@@ -131,6 +120,12 @@ input {
   opacity: 0.3;
 }
 
+#dividerMenu {
+  width: 14rem;
+  height: .7px;
+  background-color: black;
+}
+
 #color1L, #color1R {
   background-color: red;
 }
@@ -148,23 +143,14 @@ input {
 }
 
 #closeConfig {
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 7rem;
   height: 2rem;
   color: black;
 }
 
-#players {
-  display: flex;
-  justify-content: center;
-}
+/* ================= */
 
-#players div {
-  font-weight: 700;
-  font-size: 2rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
-}
 
 #logo {
   display: flex;
@@ -184,8 +170,16 @@ input {
   margin-right: 0.3rem;
 }
 
+.players {
+  margin-top: .5rem;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+
 .tables {
-  max-width: 25rem;
+  max-width: 28rem;
   padding: 0.7rem 0;
   margin-left: auto;
   margin-right: auto;
@@ -212,7 +206,6 @@ input {
   align-items: center;
   justify-content: center;
   color: white;
-  margin-left: 1.5rem;
   margin-bottom: 1rem;
   opacity: 0.3;
 }
@@ -220,7 +213,7 @@ input {
 #buttons {
   display: flex;
   justify-content: space-between;
-  width: 26rem;
+  width: 18rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -240,13 +233,39 @@ input {
   padding: 1rem 2rem;
   transition: 0.3s;
 
-  position: absolute;
+  position: relative;
   z-index: 1;
-  top: 14rem;
-  left: 11.6rem;
+  top: 4rem;
+  left: -3rem;
 }
 
 button {
   cursor: pointer;
   border-radius: 2rem;
+}
+
+
+/*========= MEDIA QUERIES =========*/
+
+/* extra large devices: 1200 > */
+
+@media (min-width: 600px) {
+
+  .container {
+    max-width: 30rem;
+    padding: 2rem 4rem;
+  }
+
+  #buttons {
+  width: 20rem;
+  }
+
+  .config {
+    width: 23rem;
+  }
+
+  #dividerMenu {
+    width: 18rem;
+  }
+
 }

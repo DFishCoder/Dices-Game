@@ -21,8 +21,7 @@
       </div>
 
       <div class="config">
-        <div>C O N F I G U R A T I O N S</div>
-        <div class="configTables">
+        <div># C O N F I G U R A T I O N S #</div>
           <div class="leftSelections">
             <div>
               <input type="text" id="player1name" placeholder="Name for Player 1" />
@@ -51,7 +50,7 @@
             </div>
           </div>
 
-          <div id="divider"></div>
+          <div id="dividerMenu"></div>
 
           <div class="rightSelections">
             <div>
@@ -80,7 +79,6 @@
               <button id="speedRight10x" onclick="speedR10x()">10x</button>
             </div>
           </div>
-        </div>
 
         <div>
           <button id="closeConfig" onclick="saveConfig()">Save Config</button>
@@ -95,9 +93,13 @@
         <h1 id="game">Game</h1>
       </div>
 
+      <div class="players">
+          <h2 id="player1">Player 1</h2>
+          <h2 id="player2">Player 2</h2>
+      </div>
+
       <div class="tables">
         <div class="tableLeft">
-          <h2 id="player1">Player 1</h2>
           <img
             class="lD"
             id="dicePositionL1"
@@ -117,11 +119,12 @@
             alt=""
           />
         </div>
-
-        <div id="divider"></div>
-
+        
+          <div id="divider">
+            <button id="resetButton" onclick="reset()">Play Again</button>
+          </div>
+          
         <div class="tableRight">
-          <h2 id="player2">Player 2</h2>
           <img
             class="rD"
             id="dicePositionR1"
@@ -147,8 +150,6 @@
         <button id="leftButton" onclick="diceEfectLeft()">Throw !</button>
         <button id="rightButton" onclick="diceEfectRight()">Throw !</button>
       </div>
-
-      <button id="resetButton" onclick="reset()">Play Again</button>
 
     </div> <!-- close container -->
 
