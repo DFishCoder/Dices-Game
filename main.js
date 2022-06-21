@@ -53,6 +53,13 @@ const config = document.querySelector('.config')
 
 var winner
 
+const plus1 = document.querySelector('#plus1')
+const score1 = document.querySelector('#score1')
+const score2 = document.querySelector('#score2')
+
+var valueScore1 = 0
+var valueScore2 = 0
+
 var A = 1,
   B = 1,
   C = 1,
@@ -335,19 +342,19 @@ function win() {
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 >
     resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
   ) {
-    winner = 'Player 1 won !'
+    winner = 1
   }
   if (
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 <
     resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
   ) {
-    winner = 'Player 2 won !'
+    winner = 2
   }
   if (
     resultlD1 * LD1 + resultlD2 * LD2 + resultlD3 * LD3 ==
     resultrD1 * RD1 + resultrD2 * RD2 + resultrD3 * RD3
   ) {
-    winner = 'Thas is a drow !'
+    winner = 0
   }
 }
 
@@ -558,9 +565,36 @@ function diceEfectRight() {
 /***** FINISH TURN *******/
 
 function finishTurn() {
-  console.log('finishTurn')
+
   win()
-  document.getElementById('resetButton').style.display = 'flex'
+  plus1.classList.add('plus1Show')
+
+  if(winner == 1) {
+    setTimeout(function () {
+    plus1.classList.add('winner1')
+  }, 1000)
+  }
+
+  if(winner == 2) {
+    setTimeout(function () {
+    plus1.classList.add('winner2')
+  }, 1000)
+  }
+
+  setTimeout(function () {
+    plus1.classList.remove('plus1Show')
+  }, 1000)
+
+  setTimeout(function () {
+    plus1.classList.remove('winner1')
+    plus1.classList.remove('winner2')
+    if(winner==1){valueScore1=valueScore1+1}
+    if(winner==2){valueScore2=valueScore2+1}
+    score1.innerHTML = valueScore1
+    score2.innerHTML = valueScore2
+    document.getElementById('resetButton').style.display = 'flex'
+  }, 2000)
+
 }
 
 /***** HIDE/SHOW MENU *******/
