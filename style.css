@@ -9,7 +9,7 @@
 
 /************** Images *****************/
 
-#dice1, #dice2, #dice3, #dice4, #dice5, #dice6 {
+#dicePositionL1, #dicePositionL2, #dicePositionL3, #dicePositionR1, #dicePositionR2, #dicePositionR3 {
   height: 3rem;
 }
 
@@ -21,49 +21,93 @@
 
 
 body {
-  background-color: rgba(2, 46, 68, 0.616);
   height: 100vh;
   width: 100vw;
+  background-color: rgba(2, 46, 68, 0.107);
 }
 
 .container {
-  margin-top: 1.5rem;
-  padding: 0.2rem;
-}
-
-#logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 0 0 20px;
-}
-
-#diceLogo {
-  height: 5rem;
-}
-
-#dice {
-  text-align: center;
-  margin-right: 0.3rem;
-}
-
-#config {
-  padding: 2rem;
-  width: auto;
+  background-color: rgba(2, 46, 68, 0.616);
+  height: 100vh;
+  padding: 1rem;
   max-width: 30rem;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.menu{
+  display: flex;
+  justify-content: right;
+  width: 28rem;
+  font-size: 1.5rem;
+}
+
+.icon-menu {
+  cursor: pointer;
+  color: white;
+}
+
+.config {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(0, 0, 0);
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   text-align: center;
+  padding: 2rem 1rem;
+  position: absolute;
+  z-index: 2;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+  height: 32rem;
+
+  top: -25rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.show {
+  top: 8rem;
+  transition: 0.2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+input {
+  text-align: center;
+  height: 2rem;
+}
+
+.configTables {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.leftSelections {
+  margin-right: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.rightSelections {
+  margin-left: 2rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .numberOfDices {
   text-align: center;
-  width: 6rem;
+}
+
+.numberOfDices div {
+  margin-bottom: 0.5rem;
 }
 
 .numberOfDices button {
@@ -71,16 +115,19 @@ body {
   opacity: 0.2;
 }
 
-.container .colorSelections {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
-}
-
-.container .colorSelections .colors button {
+.colors button {
   width: 1rem;
   height: 1rem;
   margin: 0.3rem;
+  opacity: 0.3;
+}
+
+.speedLeft div, .speedRight div  {
+  margin-bottom: 0.5rem;
+}
+
+.speedLeft button, .speedRight button {
+  width: 2rem;
   opacity: 0.3;
 }
 
@@ -89,7 +136,7 @@ body {
 }
 
 #color2L, #color2R {
-  background-color: yellow;
+  background-color: white;
 }
 
 #color3L, #color3R {
@@ -98,6 +145,13 @@ body {
 
 #color4L, #color4R {
   background-color: green;
+}
+
+#closeConfig {
+  margin-top: 2rem;
+  width: 7rem;
+  height: 2rem;
+  color: black;
 }
 
 #players {
@@ -110,6 +164,24 @@ body {
   font-size: 2rem;
   margin-right: 2rem;
   margin-left: 2rem;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 0 0 20px;
+}
+
+#logo #diceLogo {
+  height: 5rem;
+}
+
+#logo #dice {
+  text-align: center;
+  margin-right: 0.3rem;
 }
 
 .tables {
@@ -129,20 +201,6 @@ body {
   color: white;
 }
 
-.tableLeft div {
-  border: 1px solid rgb(0, 0, 0);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-}
-
-.tableRight div {
-  border: 1px solid rgb(0, 0, 0);
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-}
-
 #divider {
   width: 0.2rem;
   height: hv;
@@ -150,38 +208,42 @@ body {
 }
 
 .lD, .rD {
-  transition: 0.3s;
-  font-size: 2.5rem;
-}
-
-.lD {
-  height: 3rem;
-  width: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
 }
 
-.rD {
-  height: 3rem;
-  width: 3rem;
+#buttons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-#lD1, #lD2, #lD3, #rD1, #rD2, #rD3 {
-  display: none;
+  justify-content: space-between;
+  width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #leftButton {
   padding: 1rem 2rem;
+  transition: 0.3s;
 }
 
 #rightButton {
   padding: 1rem 2rem;
+  transition: 0.3s;
+}
+
+#resetButton {
+
+  padding: 1rem 2rem;
+  transition: 0.3s;
+
+  position: absolute;
+  z-index: 1;
+  top: 14rem;
+  left: 11.6rem;
 }
 
 button {

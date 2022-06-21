@@ -7,79 +7,150 @@
 
     <title>Online Dices</title>
 
-    
-    <!-- Icons -->
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="assets/style.css" />
-
+    <!-- Icons -->
+    <link rel="stylesheet" href="assets/fontes/style.css" />
   </head>
 
   <body>
     <div class="container">
+      <div class="menu">
+        <div class="icon-menu" onclick="openConfig()"></div>
+      </div>
 
-      <div id="config">
-        Configurations
+      <div class="config">
+        <div>C O N F I G U R A T I O N S</div>
+        <div class="configTables">
+          <div class="leftSelections">
+            <div>
+              <input type="text" id="player1name" placeholder="Name for Player 1" />
+            </div>
 
-        <div class="colorSelections">
+            <div class="colors">
+              <div>Color</div>
+              <button id="color1L" onclick="color1Left()"></button>
+              <button id="color2L" onclick="color2Left()"></button>
+              <button id="color3L" onclick="color3Left()"></button>
+              <button id="color4L" onclick="color4Left()"></button>
+            </div>
 
-          <div class="colors">
-            <button id="color1L" onclick="color1Left()"></button>
-            <button id="color2L" onclick="color2Left()"></button>
-            <button id="color3L" onclick="color3Left()"></button>
-            <button id="color4L" onclick="color4Left()"></button>
+            <div class="numberOfDices">
+              <div>Number of Dices</div>
+              <button id="LN1" onclick="numberOfDicesL1()">1</button>
+              <button id="LN2" onclick="numberOfDicesL2()">2</button>
+              <button id="LN3" onclick="numberOfDicesL3()">3</button>
+            </div>
+
+            <div class="speedLeft">
+              <div>Dice Speed</div>
+              <button id="speedLeft1x" onclick="speedL1x()">1x</button>
+              <button id="speedLeft5x" onclick="speedL5x()">5x</button>
+              <button id="speedLeft10x" onclick="speedL10x()">10x</button>
+            </div>
           </div>
 
-          <div class="numberOfDices">
-            <button id="LN1" onclick="numberOfDicesL1()">1</button>
-            <button id="LN2" onclick="numberOfDicesL2()">2</button>
-            <button id="LN3" onclick="numberOfDicesL3()">3</button>
-          </div>
+          <div id="divider"></div>
 
-          <div class="numberOfDices">
-            <button id="RN1" onclick="numberOfDicesR1()">1</button>
-            <button id="RN2" onclick="numberOfDicesR2()">2</button>
-            <button id="RN3" onclick="numberOfDicesR3()">3</button>
+          <div class="rightSelections">
+            <div>
+              <input type="text" id="player2name" placeholder="Name for Player 2" />
+            </div>
+
+            <div class="colors">
+              <div>Color</div>
+              <button id="color1R" onclick="color1Right()"></button>
+              <button id="color2R" onclick="color2Right()"></button>
+              <button id="color3R" onclick="color3Right()"></button>
+              <button id="color4R" onclick="color4Right()"></button>
+            </div>
+
+            <div class="numberOfDices">
+              <div>Number of Dices</div>
+              <button id="RN1" onclick="numberOfDicesR1()">1</button>
+              <button id="RN2" onclick="numberOfDicesR2()">2</button>
+              <button id="RN3" onclick="numberOfDicesR3()">3</button>
+            </div>
+
+            <div class="speedRight">
+              <div>Dice Speed</div>
+              <button id="speedRight1x" onclick="speedR1x()">1x</button>
+              <button id="speedRight5x" onclick="speedR5x()">5x</button>
+              <button id="speedRight10x" onclick="speedR10x()">10x</button>
+            </div>
           </div>
-  
-          <div class="colors">
-            <button id="color1R" onclick="color1Right()"></button>
-            <button id="color2R" onclick="color2Right()"></button>
-            <button id="color3R" onclick="color3Right()"></button>
-            <button id="color4R" onclick="color4Right()"></button>
-          </div>
+        </div>
+
+        <div>
+          <button id="closeConfig" onclick="saveConfig()">Save Config</button>
         </div>
       </div>
 
+      <!--------------------------------- MAIN ------------------------------->
+
       <div id="logo">
-        <h1 id="dice" >Dice</h1>
-        <img id="diceLogo" src="assets/images/logo.ico" alt="">
-        <h1 id="game" >Game</h1>
+        <h1 id="dice">Dice</h1>
+        <img id="diceLogo" src="assets/images/logo.ico" alt="" />
+        <h1 id="game">Game</h1>
       </div>
 
       <div class="tables">
         <div class="tableLeft">
-          <h2>Player 1</h2>
-          <div class="lD" id="lD1">#</div>
-          <div class="lD" id="lD2">#</div>
-          <div class="lD" id="lD3">#</div>
-          <button id="leftButton" onclick="throwLefttDices()">Throw !</button>
+          <h2 id="player1">Player 1</h2>
+          <img
+            class="lD"
+            id="dicePositionL1"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
+          <img
+            class="lD"
+            id="dicePositionL2"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
+          <img
+            class="lD"
+            id="dicePositionL3"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
         </div>
 
         <div id="divider"></div>
 
         <div class="tableRight">
-          <h2>Player 2</h2>
-          <div class="rD" id="rD1">#</div>
-          <div class="rD" id="rD2">#</div>
-          <div class="rD" id="rD3">#</div>
-          <button id="rightButton" onclick="throwRightDices()">Throw !</button>
+          <h2 id="player2">Player 2</h2>
+          <img
+            class="rD"
+            id="dicePositionR1"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
+          <img
+            class="rD"
+            id="dicePositionR2"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
+          <img
+            class="rD"
+            id="dicePositionR3"
+            src="assets/images/dice0.svg"
+            alt=""
+          />
         </div>
       </div>
-        
+
+      <div id="buttons">
+        <button id="leftButton" onclick="diceEfectLeft()">Throw !</button>
+        <button id="rightButton" onclick="diceEfectRight()">Throw !</button>
       </div>
-    </div>
+
+      <button id="resetButton" onclick="reset()">Play Again</button>
+
+    </div> <!-- close container -->
 
     <!-- Main JS -->
     <script src="main.js"></script>
