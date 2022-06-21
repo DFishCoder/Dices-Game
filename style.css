@@ -29,9 +29,9 @@ body {
 
 .container {
   background-color: rgba(2, 46, 68, 0.616);
-  height: 100vh;
+  height: 41rem;
   padding: 1rem;
-  max-width: 20rem;
+  width: 20rem;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -244,6 +244,21 @@ button {
   border-radius: 2rem;
 }
 
+#buttons {
+height: 3.5rem;
+}
+
+#buttons #leftButton:hover, #buttons #rightButton:hover { 
+  box-shadow: 0px 2px 3px 0px rgba(245, 242, 242, 0.699);
+  font-weight: 700;
+  font-size: 1rem;
+  color: orangered;
+}
+
+#resetButton:hover { 
+  box-shadow: 0px 2px 3px 0px rgba(245, 242, 242, 0.699);
+}
+
 h3 {
   color: white;
   text-align: center;
@@ -295,6 +310,58 @@ h4 {
 }
 
 
+footer {
+  border: 1px solid white;
+  width: 20rem;
+  max-height: 4rem;
+  background-color: rgba(2, 46, 68, 0.107);
+  color: rgba(2, 46, 68, 0.616);
+  margin-left: auto;
+  margin-right: auto;
+  padding: .7rem;
+  text-align: center;
+  align-items: center;
+}
+
+/* .footerIcons {
+  margin-top: 0.3rem;
+  max-width: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+footer .social {
+  justify-content: space-evenly;
+  margin-top: 0.2rem;
+  max-width: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer .social a {
+  transition: .3s;
+  display: inline-block;
+  color: rgba(2, 46, 68, 0.616);
+}
+
+footer .social a:hover {
+  transform: translateY(-8px);
+}
+
+footer h2 {
+  font-size: .8rem;
+  margin-top: 0.3rem;
+}
+
+#Fish {
+  color: orangered;
+  font-size: 1rem;
+}
+
 /*========= MEDIA QUERIES =========*/
 
 /* extra large devices: 1200 > */
@@ -302,7 +369,7 @@ h4 {
 @media (min-width: 600px) {
 
   .container {
-    max-width: 30rem;
+    width: 30rem;
     padding: 2rem 4rem;
   }
 
@@ -333,6 +400,10 @@ h4 {
     position: relative;
     left: 18rem;
     top: -2rem;
+  }
+
+  footer {
+    width: 30rem;
   }
 
 }

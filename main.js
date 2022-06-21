@@ -593,7 +593,7 @@ function finishTurn() {
     score1.innerHTML = valueScore1
     score2.innerHTML = valueScore2
     document.getElementById('resetButton').style.display = 'flex'
-  }, 2000)
+  }, 1700)
 
 }
 
