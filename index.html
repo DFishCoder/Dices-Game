@@ -24,16 +24,16 @@
         <div># C O N F I G U R A T I O N S #</div>
           <div class="leftSelections">
             <div>
-              <input type="text" id="player1name" placeholder="Name for Player 1" />
+              <input type="text" id="player1name" placeholder="Name Player 1" />
             </div>
 
-            <div class="colors">
+            <!-- <div class="colors">
               <div>Color</div>
               <button id="color1L" onclick="color1Left()"></button>
               <button id="color2L" onclick="color2Left()"></button>
               <button id="color3L" onclick="color3Left()"></button>
               <button id="color4L" onclick="color4Left()"></button>
-            </div>
+            </div> -->
 
             <div class="numberOfDices">
               <div>Number of Dices</div>
@@ -54,16 +54,16 @@
 
           <div class="rightSelections">
             <div>
-              <input type="text" id="player2name" placeholder="Name for Player 2" />
+              <input type="text" id="player2name" placeholder="Name Player 2" />
             </div>
 
-            <div class="colors">
+            <!-- <div class="colors">
               <div>Color</div>
               <button id="color1R" onclick="color1Right()"></button>
               <button id="color2R" onclick="color2Right()"></button>
               <button id="color3R" onclick="color3Right()"></button>
               <button id="color4R" onclick="color4Right()"></button>
-            </div>
+            </div> -->
 
             <div class="numberOfDices">
               <div>Number of Dices</div>
@@ -93,13 +93,25 @@
         <h1 id="game">Game</h1>
       </div>
 
-      <div class="players">
-          <h2 id="player1">Player 1</h2>
-          <h2 id="player2">Player 2</h2>
+      <h3>S C O R E</h3>
+
+      <div class="score">
+        <h4 id="score1">0</h4>
+        <h4 id="score2">0</h4>
       </div>
+
+      <div id="plus1" class="winner">
+        <h5>+1</h5>
+      </div>
+
+      <div class="players">
+        <h2 id="player1">Player 1</h2>
+        <h2 id="player2">Player 2</h2>
+    </div>
 
       <div class="tables">
         <div class="tableLeft">
+
           <img
             class="lD"
             id="dicePositionL1"
@@ -120,11 +132,10 @@
           />
         </div>
         
-          <div id="divider">
-            <button id="resetButton" onclick="reset()">Play Again</button>
-          </div>
+          <div id="divider"></div>
           
         <div class="tableRight">
+
           <img
             class="rD"
             id="dicePositionR1"
@@ -148,18 +159,8 @@
 
       <div id="buttons">
         <button id="leftButton" onclick="diceEfectLeft()">Throw !</button>
+        <button id="resetButton" onclick="reset()">Play Again</button>
         <button id="rightButton" onclick="diceEfectRight()">Throw !</button>
-      </div>
-
-      <h3>S C O R E</h3>
-
-      <div class="score">
-        <h4 id="score1">0</h4>
-        <h4 id="score2">0</h4>
-      </div>
-
-      <div id="plus1" class="winner">
-        <h5>+1</h5>
       </div>
 
     </div> <!-- close container -->

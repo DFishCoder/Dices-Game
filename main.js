@@ -13,15 +13,15 @@ const speedRight1x = document.querySelector('#speedRight1x')
 const speedRight5x = document.querySelector('#speedRight5x')
 const speedRight10x = document.querySelector('#speedRight10x')
 
-const color1L = document.querySelector('#color1L')
-const color2L = document.querySelector('#color2L')
-const color3L = document.querySelector('#color3L')
-const color4L = document.querySelector('#color4L')
+// const color1L = document.querySelector('#color1L')
+// const color2L = document.querySelector('#color2L')
+// const color3L = document.querySelector('#color3L')
+// const color4L = document.querySelector('#color4L')
 
-const color1R = document.querySelector('#color1R')
-const color2R = document.querySelector('#color2R')
-const color3R = document.querySelector('#color3R')
-const color4R = document.querySelector('#color4R')
+// const color1R = document.querySelector('#color1R')
+// const color2R = document.querySelector('#color2R')
+// const color3R = document.querySelector('#color3R')
+// const color4R = document.querySelector('#color4R')
 
 const dicePositionL1 = document.querySelector('#dicePositionL1')
 const dicePositionL2 = document.querySelector('#dicePositionL2')
@@ -134,120 +134,120 @@ function speedR10x() {
 
 // *****  CHANGE COLORS  ****** //
 
-function color1Left() {
-  color1L.style.opacity = 1
-  color2L.style.opacity = 0.2
-  color3L.style.opacity = 0.2
-  color4L.style.opacity = 0.2
+// function color1Left() {
+//   color1L.style.opacity = 1
+//   color2L.style.opacity = 0.2
+//   color3L.style.opacity = 0.2
+//   color4L.style.opacity = 0.2
 
-  // document.getElementById('leftButton').style.backgroundColor = 'red'
-  // document.getElementById('leftButton').style.color = 'white'
-}
+//   document.getElementById('leftButton').style.backgroundColor = 'red'
+//   document.getElementById('leftButton').style.color = 'white'
+// }
 
-function color2Left() {
-  color1L.style.opacity = 0.2
-  color2L.style.opacity = 1
-  color3L.style.opacity = 0.2
-  color4L.style.opacity = 0.2
+// function color2Left() {
+//   color1L.style.opacity = 0.2
+//   color2L.style.opacity = 1
+//   color3L.style.opacity = 0.2
+//   color4L.style.opacity = 0.2
 
-  document.getElementById('leftButton').style.backgroundColor = 'white'
-  document.getElementById('lD2').style.backgroundColor = 'white'
-  document.getElementById('lD3').style.backgroundColor = 'white'
+//   document.getElementById('leftButton').style.backgroundColor = 'white'
+//   document.getElementById('lD2').style.backgroundColor = 'white'
+//   document.getElementById('lD3').style.backgroundColor = 'white'
 
-  document.getElementById('lD1').style.color = 'black'
-  document.getElementById('lD2').style.color = 'black'
-  document.getElementById('lD3').style.color = 'black'
-}
+//   document.getElementById('lD1').style.color = 'black'
+//   document.getElementById('lD2').style.color = 'black'
+//   document.getElementById('lD3').style.color = 'black'
+// }
 
-function color3Left() {
-  color1L.style.opacity = 0.2
-  color2L.style.opacity = 0.2
-  color3L.style.opacity = 1
-  color4L.style.opacity = 0.2
+// function color3Left() {
+//   color1L.style.opacity = 0.2
+//   color2L.style.opacity = 0.2
+//   color3L.style.opacity = 1
+//   color4L.style.opacity = 0.2
 
-  document.getElementById('lD1').style.backgroundColor = 'blue'
-  document.getElementById('lD2').style.backgroundColor = 'blue'
-  document.getElementById('lD3').style.backgroundColor = 'blue'
+//   document.getElementById('lD1').style.backgroundColor = 'blue'
+//   document.getElementById('lD2').style.backgroundColor = 'blue'
+//   document.getElementById('lD3').style.backgroundColor = 'blue'
 
-  document.getElementById('lD1').style.color = 'white'
-  document.getElementById('lD2').style.color = 'white'
-  document.getElementById('lD3').style.color = 'white'
-}
+//   document.getElementById('lD1').style.color = 'white'
+//   document.getElementById('lD2').style.color = 'white'
+//   document.getElementById('lD3').style.color = 'white'
+// }
 
-function color4Left() {
-  color1L.style.opacity = 0.2
-  color2L.style.opacity = 0.2
-  color3L.style.opacity = 0.2
-  color4L.style.opacity = 1
+// function color4Left() {
+//   color1L.style.opacity = 0.2
+//   color2L.style.opacity = 0.2
+//   color3L.style.opacity = 0.2
+//   color4L.style.opacity = 1
 
-  document.getElementById('lD1').style.backgroundColor = 'green'
-  document.getElementById('lD2').style.backgroundColor = 'green'
-  document.getElementById('lD3').style.backgroundColor = 'green'
+//   document.getElementById('lD1').style.backgroundColor = 'green'
+//   document.getElementById('lD2').style.backgroundColor = 'green'
+//   document.getElementById('lD3').style.backgroundColor = 'green'
 
-  document.getElementById('lD1').style.color = 'white'
-  document.getElementById('lD2').style.color = 'white'
-  document.getElementById('lD3').style.color = 'white'
-}
+//   document.getElementById('lD1').style.color = 'white'
+//   document.getElementById('lD2').style.color = 'white'
+//   document.getElementById('lD3').style.color = 'white'
+// }
 
-function color1Right() {
-  color1R.style.opacity = 1
-  color2R.style.opacity = 0.2
-  color3R.style.opacity = 0.2
-  color4R.style.opacity = 0.2
+// function color1Right() {
+//   color1R.style.opacity = 1
+//   color2R.style.opacity = 0.2
+//   color3R.style.opacity = 0.2
+//   color4R.style.opacity = 0.2
 
-  document.getElementById('rD1').style.backgroundColor = 'red'
-  document.getElementById('rD2').style.backgroundColor = 'red'
-  document.getElementById('rD3').style.backgroundColor = 'red'
+//   document.getElementById('rD1').style.backgroundColor = 'red'
+//   document.getElementById('rD2').style.backgroundColor = 'red'
+//   document.getElementById('rD3').style.backgroundColor = 'red'
 
-  document.getElementById('rD1').style.color = 'white'
-  document.getElementById('rD2').style.color = 'white'
-  document.getElementById('rD3').style.color = 'white'
-}
+//   document.getElementById('rD1').style.color = 'white'
+//   document.getElementById('rD2').style.color = 'white'
+//   document.getElementById('rD3').style.color = 'white'
+// }
 
-function color2Right() {
-  color1R.style.opacity = 0.2
-  color2R.style.opacity = 1
-  color3R.style.opacity = 0.2
-  color4R.style.opacity = 0.2
+// function color2Right() {
+//   color1R.style.opacity = 0.2
+//   color2R.style.opacity = 1
+//   color3R.style.opacity = 0.2
+//   color4R.style.opacity = 0.2
 
-  document.getElementById('rD1').style.backgroundColor = 'yellow'
-  document.getElementById('rD2').style.backgroundColor = 'yellow'
-  document.getElementById('rD3').style.backgroundColor = 'yellow'
+//   document.getElementById('rD1').style.backgroundColor = 'yellow'
+//   document.getElementById('rD2').style.backgroundColor = 'yellow'
+//   document.getElementById('rD3').style.backgroundColor = 'yellow'
 
-  document.getElementById('rD1').style.color = 'black'
-  document.getElementById('rD2').style.color = 'black'
-  document.getElementById('rD3').style.color = 'black'
-}
+//   document.getElementById('rD1').style.color = 'black'
+//   document.getElementById('rD2').style.color = 'black'
+//   document.getElementById('rD3').style.color = 'black'
+// }
 
-function color3Right() {
-  color1R.style.opacity = 0.2
-  color2R.style.opacity = 0.2
-  color3R.style.opacity = 1
-  color4R.style.opacity = 0.2
+// function color3Right() {
+//   color1R.style.opacity = 0.2
+//   color2R.style.opacity = 0.2
+//   color3R.style.opacity = 1
+//   color4R.style.opacity = 0.2
 
-  document.getElementById('rD1').style.backgroundColor = 'blue'
-  document.getElementById('rD2').style.backgroundColor = 'blue'
-  document.getElementById('rD3').style.backgroundColor = 'blue'
+//   document.getElementById('rD1').style.backgroundColor = 'blue'
+//   document.getElementById('rD2').style.backgroundColor = 'blue'
+//   document.getElementById('rD3').style.backgroundColor = 'blue'
 
-  document.getElementById('rD1').style.color = 'white'
-  document.getElementById('rD2').style.color = 'white'
-  document.getElementById('rD3').style.color = 'white'
-}
+//   document.getElementById('rD1').style.color = 'white'
+//   document.getElementById('rD2').style.color = 'white'
+//   document.getElementById('rD3').style.color = 'white'
+// }
 
-function color4Right() {
-  color1R.style.opacity = 0.2
-  color2R.style.opacity = 0.2
-  color3R.style.opacity = 0.2
-  color4R.style.opacity = 1
+// function color4Right() {
+//   color1R.style.opacity = 0.2
+//   color2R.style.opacity = 0.2
+//   color3R.style.opacity = 0.2
+//   color4R.style.opacity = 1
 
-  document.getElementById('rD1').style.backgroundColor = 'green'
-  document.getElementById('rD2').style.backgroundColor = 'green'
-  document.getElementById('rD3').style.backgroundColor = 'green'
+//   document.getElementById('rD1').style.backgroundColor = 'green'
+//   document.getElementById('rD2').style.backgroundColor = 'green'
+//   document.getElementById('rD3').style.backgroundColor = 'green'
 
-  document.getElementById('rD1').style.color = 'white'
-  document.getElementById('rD2').style.color = 'white'
-  document.getElementById('rD3').style.color = 'white'
-}
+//   document.getElementById('rD1').style.color = 'white'
+//   document.getElementById('rD2').style.color = 'white'
+//   document.getElementById('rD3').style.color = 'white'
+// }
 
 // ********  NUMBER OF DICES  ****** //
 
@@ -362,6 +362,7 @@ function win() {
 
 function diceEfectLeft() {
   leftButton.setAttribute('disabled', true)
+  document.getElementById('leftButton').style.visibility = 'hidden'
   document.getElementById('dicePositionL1').style.opacity = 1
   if (B == 1 && A < 7) {
     console.log('check 0 left')
@@ -468,6 +469,7 @@ function diceEfectLeft() {
 
 function diceEfectRight() {
   rightButton.setAttribute('disabled', true)
+  document.getElementById('rightButton').style.visibility = 'hidden'
   document.getElementById('dicePositionR1').style.opacity = 1
   if (D == 1 && C < 7) {
     if (C == 1) {
@@ -633,7 +635,9 @@ function reset() {
   document.getElementById('dicePositionR3').style.opacity = 0.3
 
   leftButton.removeAttribute('disabled')
+  document.getElementById('leftButton').style.visibility = 'visible'
   rightButton.removeAttribute('disabled')
+  document.getElementById('rightButton').style.visibility = 'visible'
   EfectLeftFinish = false
   EfectRightFinish = false
 
