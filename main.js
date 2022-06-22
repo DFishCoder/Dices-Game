@@ -365,7 +365,6 @@ function diceEfectLeft() {
   document.getElementById('leftButton').style.visibility = 'hidden'
   document.getElementById('dicePositionL1').style.opacity = 1
   if (B == 1 && A < 7) {
-    console.log('check 0 left')
     if (A == 1) {
       dicePositionL1.src = d1
     } else if (A == 2) {
@@ -383,14 +382,12 @@ function diceEfectLeft() {
     resultlD1 = A
 
     setTimeout(function () {
-      console.log('check 1 left')
       A = Math.floor(Math.random() * 7) + 1
       diceEfectLeft()
     }, speedLeft)
   }
 
   if (B == 1 && A == 7) {
-    console.log('check 2 left')
     B = 2
     A = 1
   }
@@ -398,7 +395,6 @@ function diceEfectLeft() {
   if (B == 2 && A < 7) {
     document.getElementById('dicePositionL2').style.opacity = 1
     if (A == 1) {
-      console.log('check 4 left')
       dicePositionL2.src = d1
     } else if (A == 2) {
       dicePositionL2.src = d2
@@ -415,21 +411,18 @@ function diceEfectLeft() {
     resultlD2 = A
 
     setTimeout(function () {
-      console.log('check 5 left')
       A = Math.floor(Math.random() * 7) + 1
       diceEfectLeft()
     }, speedLeft)
   }
 
   if (B == 2 && A == 7) {
-    console.log('check 6 left')
     B = 3
     A = 1
   }
 
   if (B == 3 && A < 7) {
     document.getElementById('dicePositionL3').style.opacity = 1
-    console.log('check 8 left')
     if (A == 1) {
       dicePositionL3.src = d1
     } else if (A == 2) {
@@ -447,19 +440,16 @@ function diceEfectLeft() {
     resultlD3 = A
 
     setTimeout(function () {
-      console.log('check 9 left')
       A = Math.floor(Math.random() * 7) + 1
       diceEfectLeft()
     }, speedLeft)
   }
 
   if (B == 3 && A == 7) {
-    console.log('check 10 left')
     EfectLeftFinish = true
     B = 0
     A = 0
     if (EfectLeftFinish == true && EfectRightFinish == true) {
-      console.log('left call finishturn')
       finishTurn()
     }
   }
@@ -556,9 +546,7 @@ function diceEfectRight() {
     EfectRightFinish = true
     C = 0
     D = 0
-    console.log('check 11 right')
     if (EfectLeftFinish == true && EfectRightFinish == true) {
-      console.log('right call finishturn')
       finishTurn()
     }
   }
