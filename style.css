@@ -29,7 +29,6 @@ body {
 
 .container {
   background-color: rgba(2, 46, 68, 0.616);
-  height: 41rem;
   padding: 1rem;
   justify-content: center;
   margin-left: auto;
@@ -38,7 +37,7 @@ body {
   margin-top: 1rem;
 
     /* responsivel smartphones*/
-    height: 90vh;
+    height: 80%;
     width: 90vw;
     overflow: hidden;
     /* ---------------------- */
@@ -328,7 +327,7 @@ footer {
   align-items: center;
 
       /* responsivel smartphones*/
-      width: 90vw;
+      width: 90%;
       overflow: hidden;
       /* ---------------------- */
 }
