@@ -25,19 +25,20 @@
 body {
   background-color: rgba(2, 46, 68, 0.107);
   overflow: hidden;
+  height: 100vh;
 }
 
 .container {
   background-color: rgba(2, 46, 68, 0.616);
-  padding: 1rem;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid white;
   margin-top: 1rem;
+  padding: 1.3rem;
 
     /* responsivel smartphones*/
-    height: 80%;
+    height: 88%;
     width: 90vw;
     overflow: hidden;
     /* ---------------------- */
@@ -239,18 +240,12 @@ input {
   margin-right: auto;
 }
 
-#leftButton {
-  padding: 1rem 2rem;
-  transition: 0.3s;
-}
-
-#rightButton {
+#leftButton, #rightButton {
   padding: 1rem 2rem;
   transition: 0.3s;
 }
 
 #resetButton {
-
   padding: 1rem;
   width: 50rem;
   transition: 0.3s;
@@ -314,12 +309,12 @@ h4 {
   transition: 1s;
 }
 
-
 footer {
   border: 1px solid white;
   max-height: 4rem;
   background-color: rgba(2, 46, 68, 0.107);
   color: rgba(2, 46, 68, 0.616);
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   padding: .7rem;
