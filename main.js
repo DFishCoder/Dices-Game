@@ -78,57 +78,64 @@ numberOfDicesL3()
 numberOfDicesR3()
 speedL5x()
 speedR5x()
+openConfig()
 
 /*************************  FUNCTIONS ***************************/
 
 // *****  CHANGE SPEED  ****** //
 
+function removeClassLeft() {
+  speedLeft1x.classList.remove('selectButton')
+  speedLeft5x.classList.remove('selectButton')
+  speedLeft10x.classList.remove('selectButton')
+}
+
+function removeClassRight() {
+  speedRight1x.classList.remove('selectButton')
+  speedRight5x.classList.remove('selectButton')
+  speedRight10x.classList.remove('selectButton')
+}
+
 function speedL1x() {
   speedLeft = 300
 
-  speedLeft1x.style.opacity = 1
-  speedLeft5x.style.opacity = 0.2
-  speedLeft10x.style.opacity = 0.2
+  removeClassLeft()
+  speedLeft1x.classList.add('selectButton')
 }
 
 function speedL5x() {
   speedLeft = 100
 
-  speedLeft1x.style.opacity = 0.2
-  speedLeft5x.style.opacity = 1
-  speedLeft10x.style.opacity = 0.2
+  removeClassLeft()
+  speedLeft5x.classList.add('selectButton')
 }
 
 function speedL10x() {
   speedLeft = 0
 
-  speedLeft1x.style.opacity = 0.2
-  speedLeft5x.style.opacity = 0.2
-  speedLeft10x.style.opacity = 1
+  removeClassLeft()
+  speedLeft10x.classList.add('selectButton')
 }
 
 function speedR1x() {
   speedRight = 300
 
-  speedRight1x.style.opacity = 1
-  speedRight5x.style.opacity = 0.2
-  speedRight10x.style.opacity = 0.2
+  removeClassRight()
+  speedRight1x.classList.add('selectButton')
 }
 
 function speedR5x() {
   speedRight = 100
 
-  speedRight1x.style.opacity = 0.2
-  speedRight5x.style.opacity = 1
-  speedRight10x.style.opacity = 0.2
+  removeClassRight()
+  speedRight5x.classList.add('selectButton')
 }
 
 function speedR10x() {
   speedRight = 0
 
-  speedRight1x.style.opacity = 0.2
-  speedRight5x.style.opacity = 0.2
-  speedRight10x.style.opacity = 1
+  removeClassRight()
+  speedRight10x.classList.add('selectButton')
 }
 
 
@@ -252,9 +259,9 @@ function speedR10x() {
 // ********  NUMBER OF DICES  ****** //
 
 function numberOfDicesL1() {
-  document.getElementById('LN1').style.opacity = 1
-  document.getElementById('LN2').style.opacity = 0.2
-  document.getElementById('LN3').style.opacity = 0.2
+  document.getElementById('LN1').classList.add('selectButton')
+  document.getElementById('LN2').classList.remove('selectButton')
+  document.getElementById('LN3').classList.remove('selectButton')
 
   document.getElementById('dicePositionL1').style.display = 'flex'
   document.getElementById('dicePositionL2').style.display = 'none'
@@ -266,9 +273,9 @@ function numberOfDicesL1() {
 }
 
 function numberOfDicesL2() {
-  document.getElementById('LN1').style.opacity = 0.2
-  document.getElementById('LN2').style.opacity = 1
-  document.getElementById('LN3').style.opacity = 0.2
+  document.getElementById('LN1').classList.remove('selectButton')
+  document.getElementById('LN2').classList.add('selectButton')
+  document.getElementById('LN3').classList.remove('selectButton')
 
   document.getElementById('dicePositionL1').style.display = 'flex'
   document.getElementById('dicePositionL2').style.display = 'flex'
@@ -280,9 +287,10 @@ function numberOfDicesL2() {
 }
 
 function numberOfDicesL3() {
-  document.getElementById('LN1').style.opacity = 0.2
-  document.getElementById('LN2').style.opacity = 0.2
-  document.getElementById('LN3').style.opacity = 1
+
+  document.getElementById('LN1').classList.remove('selectButton')
+  document.getElementById('LN2').classList.remove('selectButton')
+  document.getElementById('LN3').classList.add('selectButton')
 
   document.getElementById('dicePositionL1').style.display = 'flex'
   document.getElementById('dicePositionL2').style.display = 'flex'
@@ -294,9 +302,10 @@ function numberOfDicesL3() {
 }
 
 function numberOfDicesR1() {
-  document.getElementById('RN1').style.opacity = 1
-  document.getElementById('RN2').style.opacity = 0.2
-  document.getElementById('RN3').style.opacity = 0.2
+
+  document.getElementById('RN1').classList.add('selectButton')
+  document.getElementById('RN2').classList.remove('selectButton')
+  document.getElementById('RN3').classList.remove('selectButton')
 
   document.getElementById('dicePositionR1').style.display = 'flex'
   document.getElementById('dicePositionR2').style.display = 'none'
@@ -308,9 +317,10 @@ function numberOfDicesR1() {
 }
 
 function numberOfDicesR2() {
-  document.getElementById('RN1').style.opacity = 0.2
-  document.getElementById('RN2').style.opacity = 1
-  document.getElementById('RN3').style.opacity = 0.2
+
+  document.getElementById('RN1').classList.remove('selectButton')
+  document.getElementById('RN2').classList.add('selectButton')
+  document.getElementById('RN3').classList.remove('selectButton')
 
   document.getElementById('dicePositionR1').style.display = 'flex'
   document.getElementById('dicePositionR2').style.display = 'flex'
@@ -322,9 +332,10 @@ function numberOfDicesR2() {
 }
 
 function numberOfDicesR3() {
-  document.getElementById('RN1').style.opacity = 0.2
-  document.getElementById('RN2').style.opacity = 0.2
-  document.getElementById('RN3').style.opacity = 1
+
+  document.getElementById('RN1').classList.remove('selectButton')
+  document.getElementById('RN2').classList.remove('selectButton')
+  document.getElementById('RN3').classList.add('selectButton')
 
   document.getElementById('dicePositionR1').style.display = 'flex'
   document.getElementById('dicePositionR2').style.display = 'flex'
