@@ -63,14 +63,14 @@ body {
   border: 1px solid rgb(0, 0, 0);
   margin-top: 1rem;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   position: absolute;
   top: 8rem;
   z-index: 2;
   border-radius: 0.5rem;
   height: 33.5rem;
     /* responsivel smartphones*/
-    width: 82%;
+    width: 80%;
     overflow: hidden;
      /* ---------------------- */
   
@@ -347,7 +347,11 @@ footer h2 {
 
 /*========= MEDIA QUERIES =========*/
 
-/* extra large devices: 1200 > */
+@media (max-height: 715px) {
+  .config {
+    top: 3rem;
+  }
+}
 
 @media (min-width: 600px) {
 
