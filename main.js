@@ -607,7 +607,7 @@ function saveConfig() {
 }
 
 function openConfig() {
-  config.classList.add('show')
+  config.classList.toggle('show')
 }
 
 

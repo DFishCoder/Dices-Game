@@ -82,7 +82,7 @@ body {
 
 .config.show {
   visibility: visible;
-  top: 3.3rem;
+  top: 3.05rem;
 }
 
 .config h2 {
@@ -361,6 +361,7 @@ footer .social a {
   transition: .3s;
   display: inline-block;
   color: yellow;
+  text-decoration: none;
 }
 
 footer .social a:hover {
