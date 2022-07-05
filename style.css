@@ -23,17 +23,16 @@
 
 
 body {
-  background-color: rgba(2, 46, 68, 0.107);
+  background-color: black;
   overflow: hidden;
   height: 100vh;
 }
 
 .container {
-  background-color: rgba(2, 46, 68, 0.616);
+  background-color: rgba(0, 0, 0, 0.984);
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid white;
   margin-top: 1rem;
   padding: 1.3rem;
 
@@ -55,17 +54,17 @@ body {
 
 .icon-menu {
   cursor: pointer;
-  color: white;
+  color: yellow;
 }
 
 .config {
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(44, 43, 43);
+  border: 1px solid rgb(0, 255, 0);
   margin-top: 1rem;
   text-align: center;
   padding: 1rem;
   position: absolute;
-  top: 8rem;
+  top: -40rem;
   z-index: 2;
   border-radius: 0.5rem;
   height: 33.5rem;
@@ -77,14 +76,17 @@ body {
   display: grid;
   gap: 1rem;
 
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.2s;
+  visibility: visible;
+  transition: 0.4s;
 }
 
 .config.show {
   visibility: visible;
-  opacity: 1;
+  top: 3.3rem;
+}
+
+.config h2 {
+  color: rgb(0, 255, 0);
 }
 
 input {
@@ -92,13 +94,14 @@ input {
   font-weight: 700;
   height: 2rem;
   margin-bottom: .5rem;
-  border: 2px solid black;
+  border: 2px solid rgb(0, 255, 0);
 }
 
 p {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   font-weight: 700;
+  color: rgb(0, 255, 0);
 }
 
 .config button {
@@ -107,10 +110,11 @@ p {
   opacity: 0.3;
   transition: 0.2s;
   margin: 0 .5rem;
+  border: 2px solid;
 }
 
 .config button.selectButton {
-  color: white;
+  color: rgb(0, 255, 0);
   opacity: 1;
   font-weight: 700;
   background-color: black;
@@ -120,9 +124,10 @@ p {
   margin-top: 1rem;
   width: 15rem;
   height: 2rem;
-  color: orangered;
+  color: rgb(0, 255, 0);
   font-weight: 700;
   opacity: 1;
+  background-color: black;
 }
 
 #dividerMenu {
@@ -131,7 +136,7 @@ p {
     overflow: hidden;
      /* ---------------------- */
   height: .7px;
-  background-color: black;
+  background-color: rgb(0, 255, 0);
 }
 
 /* #color1L, #color1R {
@@ -161,6 +166,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   padding: 0 0 0 20px;
+  color: yellow;
 }
 
 #logo #diceLogo {
@@ -175,7 +181,7 @@ p {
 .players {
   display: flex;
   justify-content: space-between;
-  color: white;
+  color: rgb(0, 255, 0);
   margin-bottom: 1rem;
   padding: 0 2rem;
   position: relative;
@@ -183,24 +189,31 @@ p {
 
 .tables {
   max-width: 28rem;
-  padding: 0.7rem 0;
+  padding: 0rem 0rem 0rem 0rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: space-between;
+  background-color: black;
+  border-radius: 2rem;
+  margin-bottom: .5rem;
+}
+
+.tableLeft, .tableRight {
+  margin-top: .5rem;
 }
 
 #divider {
-  width: 0.2rem;
+  width: .5rem;
   height: hv;
-  background-color: black;
+  background-color: ye;
 }
 
 .lD, .rD {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(0, 255, 0);
   margin-bottom: 1rem;
   opacity: 0.3;
 }
@@ -214,10 +227,9 @@ p {
 }
 
 #buttons #leftButton:hover, #buttons #rightButton:hover, #resetButton:hover { 
-  box-shadow: 0px 2px 3px 0px rgba(245, 242, 242, 0.699);
-  font-weight: 700;
-  font-size: 1rem;
-  color: orangered;
+  /* box-shadow: 0px 2px 3px 0px rgba(245, 242, 242, 0.699); */
+  color: rgb(0, 255, 0);
+  background-color: rgba(255, 255, 0, 0.484);
 }
 
 #buttons {
@@ -232,14 +244,26 @@ p {
 #leftButton, #rightButton {
   padding: 1rem 2rem;
   transition: 0.3s;
+  color: yellow;
+  background-color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: larger;
+  border: 2px solid;
 }
 
 #resetButton {
   padding: 1rem;
-  width: 50rem;
+  width: 100%;
+  height: 5rem;
   transition: 0.3s;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: yellow;
+  font-size: larger;
+  border: 2px solid;
+  background-color: rgb(0, 0, 0);
+  font-weight: 700;
 
   position: relative;
   z-index: 1;
@@ -251,14 +275,19 @@ button {
 }
 
 h3 {
-  color: white;
+  color: yellow;
   text-align: center;
   font-size: 2rem;
 }
 
 h4 {
   font-size: 2rem;
-  color: white;
+  color: yellow;
+}
+
+h5 {
+  font-size: 2rem;
+  color: rgb(0, 255, 0);
 }
 
 .score {
@@ -267,6 +296,10 @@ h4 {
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
+}
+
+h2 {
+  color: yellow;
 }
 
 .winner {
@@ -299,10 +332,8 @@ h4 {
 }
 
 footer {
-  border: 1px solid white;
   max-height: 4rem;
-  background-color: rgba(2, 46, 68, 0.107);
-  color: rgba(2, 46, 68, 0.616);
+  background-color: black;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -329,11 +360,12 @@ footer .social {
 footer .social a {
   transition: .3s;
   display: inline-block;
-  color: rgba(2, 46, 68, 0.616);
+  color: yellow;
 }
 
 footer .social a:hover {
   transform: translateY(-8px);
+  color: rgb(0, 255, 0);
 }
 
 footer h2 {
@@ -342,16 +374,11 @@ footer h2 {
 }
 
 #Fish {
-  color: rgba(255, 68, 0, 0.79);
+  color: rgb(0, 255, 0);
+  font-size: 1rem;
 }
 
 /*========= MEDIA QUERIES =========*/
-
-@media (max-height: 715px) {
-  .config {
-    top: 3rem;
-  }
-}
 
 @media (min-width: 600px) {
 
@@ -370,7 +397,7 @@ footer h2 {
   }
 
   #dividerMenu {
-    width: 22rem;
+    width: 24rem;
   }
 
   .winner {

@@ -15,18 +15,15 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="menu">
-        <div class="icon-menu" onclick="openConfig()"></div>
-      </div>
 
+    <div class="container">
       <div class="config">
         <h2># CONFIGURATIONS #</h2>
         <div class="leftSelections">
           <div>
             <input type="text" id="player1name" placeholder="Name Player 1" />
           </div>
-
+  
           <!-- <div class="colors">
               <div>Color</div>
               <button id="color1L" onclick="color1Left()"></button>
@@ -34,14 +31,14 @@
               <button id="color3L" onclick="color3Left()"></button>
               <button id="color4L" onclick="color4Left()"></button>
             </div> -->
-
+  
           <div class="numberOfDices">
             <p>Number of Dices</p>
             <button id="LN1" onclick="numberOfDicesL1()">1</button>
             <button id="LN2" onclick="numberOfDicesL2()">2</button>
             <button id="LN3" onclick="numberOfDicesL3()">3</button>
           </div>
-
+  
           <div class="speedLeft">
             <p>Dice Speed</p>
             <button id="speedLeft1x" onclick="speedL1x()">1x</button>
@@ -49,14 +46,14 @@
             <button id="speedLeft10x" onclick="speedL10x()">10x</button>
           </div>
         </div>
-
+  
         <div id="dividerMenu"></div>
-
+  
         <div class="rightSelections">
           <div>
             <input type="text" id="player2name" placeholder="Name Player 2" />
           </div>
-
+  
           <!-- <div class="colors">
               <div>Color</div>
               <button id="color1R" onclick="color1Right()"></button>
@@ -64,14 +61,14 @@
               <button id="color3R" onclick="color3Right()"></button>
               <button id="color4R" onclick="color4Right()"></button>
             </div> -->
-
+  
           <div class="numberOfDices">
             <p>Number of Dices</p>
             <button id="RN1" onclick="numberOfDicesR1()">1</button>
             <button id="RN2" onclick="numberOfDicesR2()">2</button>
             <button id="RN3" onclick="numberOfDicesR3()">3</button>
           </div>
-
+  
           <div class="speedRight">
             <p>Dice Speed</p>
             <button id="speedRight1x" onclick="speedR1x()">1x</button>
@@ -79,10 +76,14 @@
             <button id="speedRight10x" onclick="speedR10x()">10x</button>
           </div>
         </div>
-
+  
         <div>
           <button id="saveConfigButton" onclick="saveConfig()">Save Config</button>
         </div>
+      </div>
+      
+      <div class="menu">
+        <div class="icon-menu" onclick="openConfig()"></div>
       </div>
 
       <!--------------------------------- MAIN ------------------------------->
